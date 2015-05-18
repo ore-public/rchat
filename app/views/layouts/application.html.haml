@@ -33,6 +33,17 @@
               %a{href: "#about"} About
             %li
               %a{href: "#contact"} Contact
+          %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li
+                %a{href: "#"}
+                  = current_user.name
+              %li
+                = link_to "Sign out", destroy_user_session_path, :method => :delete
+            - else
+              %li
+                = link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter)
+
     .container
       - flash.each do |name, msg|
         = content_tag :div, class: "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do
