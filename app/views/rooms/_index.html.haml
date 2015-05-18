@@ -1,0 +1,4 @@
+%ul
+  = content_tag_for(:li, @rooms) do |room|
+    = room.name
+    = link_to 'x', room, method: :delete, remote: true

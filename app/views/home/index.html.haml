@@ -1,1 +1,8 @@
-%h1 Home
+.room-area
+  ルームの作成
+  = form_for(Room.new, remote: true) do |f|
+    = f.text_field :name
+    = f.submit "作成"
+  .room-list
+
+.chat-area
