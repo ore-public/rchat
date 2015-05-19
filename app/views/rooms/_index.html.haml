@@ -1,4 +1,4 @@
 %ul
   = content_tag_for(:li, @rooms) do |room|
-    = room.name
+    = link_to room.name, room_comments_path(room), remote: true
     = link_to 'x', room, method: :delete, remote: true

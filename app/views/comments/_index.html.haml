@@ -1,0 +1,11 @@
+%h1 ルーム名:#{@room.name}
+
+%ul
+  = content_tag_for(:li, @room.comments) do |comment|
+    = comment.body
+    \by
+    = current_user.name
+
+= form_for([@room, @room.comments.build], remote: true) do |f|
+  = f.text_area :body
+  = f.submit

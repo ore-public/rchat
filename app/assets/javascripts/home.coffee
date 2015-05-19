@@ -11,4 +11,10 @@ $ ->
       url: "/rooms"
       dataType: "script"
 
+  Home.showComment = (room_id) ->
+    $.ajax
+      type: "GET"
+      url: "/rooms/#{room_id}/comments"
+      dataType: "script"
+
   Home.showRoom()
