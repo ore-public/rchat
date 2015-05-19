@@ -8,7 +8,11 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    @room.save!
+    if @room.save
+      render
+    else
+      render 'failure'
+    end
   end
 
   def destroy
