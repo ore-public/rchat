@@ -1,1 +1,4 @@
 $(".chat-area").html("<%= j(render 'index') %>");
+Home.socket.json.emit('connect_room', {
+    room_id: <%= @room.id %>
+  });
