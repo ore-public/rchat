@@ -17,4 +17,8 @@ $ ->
       url: "/rooms/#{room_id}/comments"
       dataType: "script"
 
+  Home.socket = io.connect('http://127.0.0.1:3001/')
+  Home.socket.on 'comment_send', (data) ->
+    Home.showComment(data.room_id)
+
   Home.showRoom()

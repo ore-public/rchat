@@ -54,3 +54,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-sass'
 end
 gem 'bootstrap-generators'
+
+gem 'rest-client'

@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     @comment = @room.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
+      @comment.emit
       render
     else
       render 'failure'
