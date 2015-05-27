@@ -1,0 +1,13 @@
+@for $i from 1 through 6 {
+  $bottom: $i * 5;
+  .padding-bottom-#{$bottom} {
+    padding-bottom: $bottom + px;
+  }
+  .margin-bottom-#{$bottom} {
+    margin-bottom: $bottom + px;
+  }
+}
+
+.margin-bottom-none {
+  margin-bottom: 0px;
+}
